@@ -22,4 +22,4 @@ linked_plots = link_plots(
 )
 
 curdoc().add_root(row(*[_plot.view() for _plot in linked_plots]))
-curdoc().title = "Annotator-Plus"
+curdoc().title = "Annotator-Plain"
