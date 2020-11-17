@@ -1,7 +1,7 @@
 dependencies:
-  - pip
+  - python=3.7
+  - hover>=0.1.2
+  - spacy
+  - wrappy
   - pip:
     - jupyter-server-proxy
-    - hover
-    - spacy
-    - rich
