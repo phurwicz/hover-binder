@@ -1,6 +1,7 @@
 # Running a bokeh server with Binder
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/phurwicz/hover-binder/master?urlpath=/proxy/8890/linked-annotator) Linked Annotator
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/phurwicz/hover-binder/master?urlpath=/proxy/8890/simple-annotator) Simple Annotator
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/phurwicz/hover-binder/master?urlpath=/proxy/8891/linked-annotator) Linked Annotator
 
 
 This repository demonstrates the usage of [hover](https://github.com/phurwicz/hover) to understand and supervise a machine learning task.
