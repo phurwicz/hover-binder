@@ -22,7 +22,7 @@ def get_text_to_vec():
     # SpaCy 'vector' models are perfect for this
     #nlp = spacy.load('en_vectors_web_lg')
     
-    # 'core' models are slower due to linguistic features
+    # 'core' models will be slower due to linguistic features if they are enabled (by default)
     nlp = spacy.load('en_core_web_md')
     
     # could use a transformer if speed is ok

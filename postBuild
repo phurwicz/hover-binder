@@ -1,9 +1,9 @@
 # enable jupyter_server_proxy
-python -m spacy download en_core_web_md
-# enable jupyter_server_proxy
 jupyter serverextension enable --sys-prefix jupyter_server_proxy
 # install the bokeh server extension so that
 # bokeh launches at startup
 mv bokehserverextension.py ${NB_PYTHON_PREFIX}/lib/python*/site-packages/
 # enable bokeh extension
 jupyter serverextension enable --sys-prefix bokehserverextension
+# fetch a SpaCy model that the applications will use
+python -m spacy download en_core_web_md
