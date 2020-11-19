@@ -6,7 +6,7 @@ sys.path.insert(0, "..")
 import os
 import hover
 from local_lib import create_embedded_dataset, link_plots
-from hover.future.core.explorer import BokehCorpusAnnotator
+from hover.core.explorer import BokehCorpusAnnotator
 from bokeh.io import curdoc
 from bokeh.layouts import row
 
