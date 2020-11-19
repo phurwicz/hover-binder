@@ -12,8 +12,8 @@ from bokeh.layouts import row
 
 dataset = create_embedded_dataset("model_template")
 
-corpus_explorer = BokehCorpusExplorer(dataset.dfs["raw"], title="Corpus Explorer")
-corpus_annotator = BokehCorpusAnnotator(dataset.dfs["raw"], title="Corpus Annotator")
+corpus_explorer = BokehCorpusExplorer(dataset.dfs["raw"], title="Explorer: use the search widget for highlights, then explore and select")
+corpus_annotator = BokehCorpusAnnotator(dataset.dfs["raw"], title="Annotator: apply labels to the selected points")
 
 linked_plots = link_plots(corpus_explorer, corpus_annotator)
 
