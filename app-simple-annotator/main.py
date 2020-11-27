@@ -5,7 +5,7 @@ sys.path.insert(0, "..")
 
 import os
 import hover
-from local_lib import create_embedded_dataset, link_plots
+from local_lib import create_embedded_dataset
 from hover.core.explorer import BokehCorpusAnnotator
 from bokeh.io import curdoc
 from bokeh.layouts import row
@@ -18,5 +18,7 @@ corpus_annotator = BokehCorpusAnnotator(
 
 corpus_annotator.plot()
 
-curdoc().add_root(row(*[_plot.view() for _plot in linked_plots]))
+print(corpus_annotator.figure.renderers)
+
+curdoc().add_root(row(corpus_annotator.view()))
 curdoc().title = "Annotator-Plain"
