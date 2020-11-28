@@ -13,12 +13,13 @@ from bokeh.layouts import row
 dataset = create_embedded_dataset("model_template")
 
 corpus_annotator = BokehCorpusAnnotator(
-    {"raw": dataset.dfs["raw"]}, title="Annotator: apply labels to the selected points"
+    {"raw": dataset.dfs["raw"]},
+    title="Annotator: apply labels to the selected points",
+    height=600,
+    width=600,
 )
 
 corpus_annotator.plot()
 
-print(corpus_annotator.figure.renderers)
-
 curdoc().add_root(row(corpus_annotator.view()))
-curdoc().title = "Annotator-Plain"
+curdoc().title = "Simple-Annotator"

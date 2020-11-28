@@ -7,7 +7,6 @@ import os
 import hover
 from local_lib import create_embedded_dataset
 from hover.core.explorer import BokehSnorkelExplorer, BokehCorpusAnnotator
-from hover.recipe.subroutine import link_size_and_range, link_selection
 from bokeh.io import curdoc
 from bokeh.layouts import row
 from bokeh.models import Button
@@ -21,10 +20,15 @@ dataset = create_embedded_dataset("model_template")
 snorkel_explorer = BokehSnorkelExplorer(
     {"raw": dataset.dfs["raw"], "labeled": dataset.dfs["dev"]},
     title="Snorkel: square for correct, x for incorrect, + for missed; click on legends to hide or show LF",
+    height=600,
+    width=600,
 )
 
 corpus_annotator = BokehCorpusAnnotator(
-    {"raw": dataset.dfs["raw"]}, title="Annotator: apply labels to the selected points"
+    {"raw": dataset.dfs["raw"]},
+    title="Annotator: apply labels to the selected points",
+    height=600,
+    width=600,
 )
 
 snorkel_explorer.plot()
@@ -33,8 +37,8 @@ for _lf in LABELING_FUNCTIONS:
     snorkel_explorer.plot_lf(_lf)
 snorkel_explorer.figure.legend.click_policy = "hide"
 
-link_size_and_range(snorkel_explorer.figure, corpus_annotator.figure)
-link_selection(snorkel_explorer.sources["raw"], corpus_annotator.sources["raw"])
+snorkel_explorer.link_xy_range(corpus_annotator)
+snorkel_explorer.link_selection("raw", corpus_annotator, "raw")
 
 # lf_reloader = Button(label="Reload LF", button_type="primary")
 #
