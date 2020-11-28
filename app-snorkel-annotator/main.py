@@ -12,8 +12,8 @@ from bokeh.io import curdoc
 from bokeh.layouts import row
 from bokeh.models import Button
 from bokeh.events import ButtonClick
-import lf_template
-from lf_template import LABELING_FUNCTIONS
+import snorkel_template
+from snorkel_template import LABELING_FUNCTIONS
 from importlib import reload
 
 dataset = create_embedded_dataset("model_template")
@@ -42,8 +42,8 @@ link_selection(snorkel_explorer.sources["raw"], corpus_annotator.sources["raw"])
 #    """
 #    Callback function.
 #    """
-#    reload(lf_template)
-#    from lf_template import LABELING_FUNCTIONS
+#    reload(snorkel_template)
+#    from snorkel_template import LABELING_FUNCTIONS
 #    snorkel_explorer.reset_figure()
 #    snorkel_explorer.plot()
 #    for _lf in LABELING_FUNCTIONS:
