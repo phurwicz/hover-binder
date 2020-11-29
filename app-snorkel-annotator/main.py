@@ -3,14 +3,12 @@ import sys
 sys.path.insert(0, ".")
 sys.path.insert(0, "..")
 
-import os
 import hover
 from local_lib import create_embedded_dataset
 from hover.core.explorer import BokehSnorkelExplorer, BokehCorpusAnnotator
 from bokeh.io import curdoc
 from bokeh.layouts import row
 from bokeh.models import Button
-from bokeh.events import ButtonClick
 import snorkel_template
 from snorkel_template import LABELING_FUNCTIONS
 from importlib import reload
@@ -53,7 +51,7 @@ snorkel_explorer.link_selection("raw", corpus_annotator, "raw")
 #    for _lf in LABELING_FUNCTIONS:
 #        snorkel_explorer.plot_lf(_lf)
 #
-# lf_reloader.on_event(ButtonClick, reload_lf)
+# lf_reloader.on_click(reload_lf)
 
 # curdoc().add_root(row(lf_reloader, *[_plot.view() for _plot in [snorkel_explorer, corpus_annotator]]))
 curdoc().add_root(

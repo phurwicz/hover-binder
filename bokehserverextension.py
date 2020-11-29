@@ -10,12 +10,13 @@ def load_jupyter_server_extension(nbapp):
             "serve",
             "app-simple-annotator",
             "app-linked-annotator",
+            "app-active-learning",
             "app-snorkel-annotator",
             "--allow-websocket-origin=*",
         ]
     )
 
-    time.sleep(10)
+    time.sleep(15)
     Popen(["curl", "http://localhost:5006/app-simple-annotator"])
 
 
