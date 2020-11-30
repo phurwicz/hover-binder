@@ -31,7 +31,7 @@ softlabel_explorer = BokehSoftLabelExplorer(
     {"raw": dataset.dfs["raw"], "labeled": dataset.dfs["dev"]},
     "pred_label",
     "pred_score",
-    title="Explorer: use the search widget for highlights, then explore and select",
+    title="Prediction Visualizer: retrain model and locate confusions",
     height=600,
     width=600,
 )
@@ -92,12 +92,17 @@ def setup_pop_updater():
     )
     population_source = ColumnDataSource(dict())
     population_columns = [
-        TableColumn(field="label", title="label"),
-        TableColumn(field="count_raw", title="raw"),
-        TableColumn(field="count_dev", title="dev"),
+        TableColumn(field="label", title="label", width=150),
+        TableColumn(field="count_raw", title="raw", width=50),
+        TableColumn(field="count_dev", title="dev", width=50),
     ]
     population_table = DataTable(
-        source=population_source, columns=population_columns, width=SIDEBAR_WIDTH
+        source=population_source,
+        columns=population_columns,
+        width=SIDEBAR_WIDTH,
+        height=SIDEBAR_WIDTH * 3,
+        fit_columns=False,
+        index_width=50,
     )
 
     def update_population():

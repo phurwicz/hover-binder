@@ -13,11 +13,18 @@ This repository demonstrates the usage of [hover](https://github.com/phurwicz/ho
 
 ## Linked Annotator [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/phurwicz/hover-binder/master?urlpath=/proxy/5006/app-linked-annotator)
 
-![Demo](images/app-linked-annotator.gif)
+![Demo-linked](images/app-linked-annotator.gif)
 
 - on top of the `Simple Annotator`, showes another plot which is focused on search
 - the search boxes are independent across plots, minimizing interference in between
 - :bulb: the selections in the plots are synchronized. You can select in one and label in the other!
+
+## Active Learning [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/phurwicz/hover-binder/master?urlpath=/proxy/5006/app-active-learning)
+
+![Demo-active](images/app-active-learning.gif)
+
+- compared with the `Linked Annotator`, replaces the left plot with the predictions of a model in the loop
+- :bulb: inspect data points based on their prediction confidence and locations!
 
 ## Snorkel Annotator [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/phurwicz/hover-binder/master?urlpath=/proxy/5006/app-snorkel-annotator)
 
