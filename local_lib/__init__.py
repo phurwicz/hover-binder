@@ -14,7 +14,7 @@ def load_vectorizer(module_name):
     return module.get_vectorizer()
 
 
-@wrappy.memoize(cache_limit=10, return_copy=True)
+@wrappy.memoize(cache_limit=10, return_copy=False)
 def create_embedded_dataset(module_name):
     data_home = os.path.join(os.path.dirname(__file__), "../scikit_learn_data/")
     my_20ng, label_encoder, label_decoder = newsgroups_dictl(data_home=data_home)
@@ -29,10 +29,8 @@ def create_embedded_dataset(module_name):
         test_dictl=my_20ng["test"],
     )
 
-    dataset.dfs["raw"].drop(["label"], inplace=True, axis=1)
-    dataset.synchronize_df_to_dictl()
-
     vectorizer = load_vectorizer(module_name)
     dataset.compute_2d_embedding(vectorizer, "umap")
+    dataset.synchronize_df_to_dictl()
 
     return dataset

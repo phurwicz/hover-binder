@@ -3,23 +3,15 @@ import sys
 sys.path.insert(0, ".")
 sys.path.insert(0, "..")
 
-import os
-import hover
 from local_lib import create_embedded_dataset
-from hover.core.explorer import BokehCorpusAnnotator
+from hover.recipes.experimental import simple_annotator
 from bokeh.io import curdoc
-from bokeh.layouts import row
 
-dataset = create_embedded_dataset("model_template")
+# create a hover.core.SupervisableDataset
+dataset = create_embedded_dataset("model_template").copy()
 
-corpus_annotator = BokehCorpusAnnotator(
-    {"raw": dataset.dfs["raw"]},
-    title="Annotator: apply labels to the selected points",
-    height=600,
-    width=600,
-)
+# tell bokeh to create a document
+doc = curdoc()
 
-corpus_annotator.plot()
-
-curdoc().add_root(row(corpus_annotator.view()))
-curdoc().title = "Simple-Annotator"
+# render the document
+simple_annotator(dataset)(doc)
