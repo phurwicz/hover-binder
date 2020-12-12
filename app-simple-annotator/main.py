@@ -10,8 +10,6 @@ from bokeh.io import curdoc
 # create a hover.core.SupervisableDataset
 dataset = create_embedded_dataset("model_template").copy()
 
-# tell bokeh to create a document
+# create and render bokeh document
 doc = curdoc()
-
-# render the document
 simple_annotator(dataset)(doc)

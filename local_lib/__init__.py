@@ -3,7 +3,7 @@ import wrappy
 import hover
 from hover.utils.datasets import newsgroups_dictl
 from hover.core.dataset import SupervisableTextDataset
-
+from hover.module_config import ABSTAIN_DECODED
 
 # define functions that provide crucial intermediates
 @wrappy.memoize(cache_limit=10)
@@ -19,15 +19,14 @@ def create_embedded_dataset(module_name):
     data_home = os.path.join(os.path.dirname(__file__), "../scikit_learn_data/")
     my_20ng, label_encoder, label_decoder = newsgroups_dictl(data_home=data_home)
 
-    # taking a small subset of the data so that the Binder example loads faster
-    split_idx = int(0.1 * len(my_20ng["train"]))
-    # split_idx = int(0.9 * len(my_20ng["train"]))
+    split_idx = int(0.9 * len(my_20ng["train"]))
     dataset = SupervisableTextDataset(
-        raw_dictl=my_20ng["train"][:split_idx],
-        dev_dictl=my_20ng["train"][split_idx : int(split_idx * 1.2)],
-        # dev_dictl=my_20ng["train"][split_idx:],
-        test_dictl=my_20ng["test"],
+        raw_dictl=my_20ng["train"][: int(split_idx * 0.5)],
+        train_dictl=my_20ng["train"][int(split_idx * 0.9) : split_idx],
+        dev_dictl=my_20ng["train"][split_idx:],
+        test_dictl=my_20ng["test"][:500],
     )
+    dataset.dfs["raw"]["label"] = ABSTAIN_DECODED
 
     vectorizer = load_vectorizer(module_name)
     dataset.compute_2d_embedding(vectorizer, "umap")
