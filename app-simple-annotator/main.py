@@ -12,4 +12,4 @@ dataset = create_embedded_dataset("model_template").copy()
 
 # create and render bokeh document
 doc = curdoc()
-simple_annotator(dataset)(doc)
+simple_annotator(dataset, width=800)(doc)

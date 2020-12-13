@@ -20,11 +20,12 @@ def create_embedded_dataset(module_name):
     my_20ng, label_encoder, label_decoder = newsgroups_dictl(data_home=data_home)
 
     split_idx = int(0.9 * len(my_20ng["train"]))
+    # taking smaller sample so that the example loads faster
     dataset = SupervisableTextDataset(
-        raw_dictl=my_20ng["train"][: int(split_idx * 0.5)],
+        raw_dictl=my_20ng["train"][: int(split_idx * 0.9)][:2000],
         train_dictl=my_20ng["train"][int(split_idx * 0.9) : split_idx],
-        dev_dictl=my_20ng["train"][split_idx:],
-        test_dictl=my_20ng["test"][:500],
+        dev_dictl=my_20ng["train"][split_idx:][:500],
+        # test_dictl=my_20ng["test"][:1000],
     )
     dataset.dfs["raw"]["label"] = ABSTAIN_DECODED
 
