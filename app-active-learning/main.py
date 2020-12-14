@@ -11,7 +11,7 @@ from bokeh.io import curdoc
 TASK_MODULE = "model_template"
 
 # create a hover.core.SupervisableDataset
-dataset = create_embedded_dataset(TASK_MODULE)
+dataset = create_embedded_dataset(TASK_MODULE).copy()
 
 # load a vectorizer-neuralnet architecture for active learning
 vectorizer = load_vectorizer(TASK_MODULE)
