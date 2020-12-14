@@ -3,7 +3,7 @@ dependencies:
   - pip
   - pip:
     - jupyter-server-proxy
-    - hover>=0.3.0
+    - hover>=0.3.2
     - spacy
     - umap-learn
     - wrappy
