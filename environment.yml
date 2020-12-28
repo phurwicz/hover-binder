@@ -6,4 +6,5 @@ dependencies:
     - hover==0.3.2
     - spacy
     - umap-learn
+    - faker
     - wrappy
