@@ -3,6 +3,7 @@ dependencies:
   - pip
   - pip:
     - jupyter-server-proxy
+    - jupyter_bokeh
     - hover==0.3.2
     - spacy
     - umap-learn
