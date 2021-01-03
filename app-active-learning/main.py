@@ -5,7 +5,8 @@ sys.path.insert(0, "..")
 
 from local_lib import create_embedded_dataset, load_vectorizer
 from hover.recipes.experimental import active_learning
-from hover.core.neural import create_vector_net_from_module, VectorNet
+from hover.core.neural import VectorNet
+from hover.utils.common_nn import LogisticRegression
 from bokeh.io import curdoc
 
 TASK_MODULE = "model_template"
@@ -17,9 +18,9 @@ dataset = create_embedded_dataset(TASK_MODULE).copy()
 vectorizer = load_vectorizer(TASK_MODULE)
 
 
-def vecnet_callback():
-    model = create_vector_net_from_module(VectorNet, TASK_MODULE, dataset.classes)
-    return model
+def vecnet_callback(dataset, vectorizer):
+    vecnet = VectorNet(vectorizer, LogisticRegression, "model.pt", dataset.classes)
+    return vecnet
 
 
 # create and render bokeh document
