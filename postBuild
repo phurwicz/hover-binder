@@ -7,6 +7,3 @@ mv bokehserverextension.py ${NB_PYTHON_PREFIX}/lib/python*/site-packages/
 jupyter serverextension enable --sys-prefix bokehserverextension
 # fetch a SpaCy model that the applications will use
 python -m spacy download en_core_web_md
-# get lab extensions so that bokeh can also output to Jupyter Lab
-jupyter labextension install @jupyter-widgets/jupyterlab-manager
-jupyter labextension install @bokeh/jupyter_bokeh
