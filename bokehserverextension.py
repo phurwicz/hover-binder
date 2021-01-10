@@ -16,6 +16,7 @@ def load_jupyter_server_extension(nbapp):
         ]
     )
 
+    # pre-compute data that the bokeh applications depend on
     time.sleep(15)
     Popen(["curl", "http://localhost:5006/app-simple-annotator"])
 
