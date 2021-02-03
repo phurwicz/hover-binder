@@ -4,7 +4,7 @@ dependencies:
   - pip:
     - jupyter-server-proxy
     - jupyter_bokeh
-    - hover==0.4.0
+    - hover==0.4.1
     - spacy
     - umap-learn
     - faker
