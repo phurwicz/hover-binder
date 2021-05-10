@@ -13,7 +13,7 @@ This repository demonstrates the usage of [hover](https://github.com/phurwicz/ho
 
 ## Linked Annotator [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/phurwicz/hover-binder/master?urlpath=/proxy/5006/app-linked-annotator)
 
-![Demo-linked](https://github.com/phurwicz/hover-gallery/raw/main/0.4.1/app-active-learning.gif)
+![Demo-linked](https://raw.githubusercontent.com/phurwicz/hover-gallery/main/0.4.1/app-linked-annotator.gif)
 
 - on top of the `Simple Annotator`, showes another plot which is focused on search
 - the search boxes are independent across plots, minimizing interference in between
