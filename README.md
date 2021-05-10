@@ -13,7 +13,7 @@ This repository demonstrates the usage of [hover](https://github.com/phurwicz/ho
 
 ## Linked Annotator [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/phurwicz/hover-binder/master?urlpath=/proxy/5006/app-linked-annotator)
 
-![Demo-linked](images/app-linked-annotator.gif)
+![Demo-linked](https://github.com/phurwicz/hover-gallery/raw/main/0.4.1/app-active-learning.gif)
 
 - on top of the `Simple Annotator`, showes another plot which is focused on search
 - the search boxes are independent across plots, minimizing interference in between
@@ -21,7 +21,7 @@ This repository demonstrates the usage of [hover](https://github.com/phurwicz/ho
 
 ## Active Learning [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/phurwicz/hover-binder/master?urlpath=/proxy/5006/app-active-learning)
 
-![Demo-active](images/app-active-learning.gif)
+![Demo-active](https://raw.githubusercontent.com/phurwicz/hover-gallery/main/0.4.1/app-active-learning.gif)
 
 - compared with the `Linked Annotator`, replaces the left plot with the predictions of a model in the loop
 - :bulb: inspect data points based on their prediction confidence and locations!
