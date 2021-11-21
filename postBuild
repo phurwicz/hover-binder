@@ -4,6 +4,8 @@ jupyter serverextension enable --py jupyter-server-proxy
 # install the bokeh server extension so that
 # bokeh launches at startup
 mv bokehserverextension.py ${NB_PYTHON_PREFIX}/lib/python*/site-packages/
+# enable JavaScript
+npm i @jupyterlab/javascript-extension
 # enable bokeh extension
 jupyter serverextension enable --sys-prefix bokehserverextension
 # fetch a SpaCy model that the applications will use
