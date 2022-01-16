@@ -3,7 +3,6 @@ import sys
 sys.path.insert(0, ".")
 sys.path.insert(0, "..")
 
-import hover
 from local_lib import create_embedded_dataset
 from hover.recipes.experimental import snorkel_crosscheck
 from bokeh.io import curdoc
