@@ -1,3 +1,8 @@
+"""
+Example module where the __init__ file defines utility functions
+and the folder itself can serve as a workspace holding Jupyer
+notebooks and data files like .pkl or .csv ones.
+"""
 import os
 import re
 import numpy as np
@@ -7,17 +12,13 @@ CACHE_PATH = os.path.join(os.path.dirname(__file__), "vecs.pkl")
 
 
 def dummy_vectorizer(text):
-    """
-    A 'minimal' text vectorizer.
-    """
+    """A 'minimal' text vectorizer with no semantic meaning."""
     return np.random.rand(128)
 
 
 @wrappy.guard(fallback_retval=dummy_vectorizer)
 def get_vectorizer():
-    """
-    :returns: a text vectorizer.
-    """
+    """A real text vectorizer based on SpaCy."""
     import spacy
 
     # SpaCy 'vector' models are perfect for this
@@ -49,6 +50,7 @@ def get_vectorizer():
 def get_architecture():
     # lazy import for compatibility when get_architecture() is unused
     from hover.utils.common_nn import LogisticRegression as LR
+
     return LR
 
 

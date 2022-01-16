@@ -1,3 +1,6 @@
+"""
+Utility module for common functions shared across demo apps.
+"""
 import os
 import wrappy
 from hover.utils.datasets import newsgroups_reduced_dictl
@@ -15,7 +18,7 @@ def load_vectorizer(module_name):
 @wrappy.memoize(cache_limit=10, return_copy=False)
 def create_embedded_dataset(module_name):
     data_home = os.path.join(os.path.dirname(__file__), "../scikit_learn_data/")
-    my_20ng, label_encoder, _ = newsgroups_reduced_dictl(data_home=data_home)
+    my_20ng, _, _ = newsgroups_reduced_dictl(data_home=data_home)
 
     split_idx = int(0.9 * len(my_20ng["train"]))
     # taking smaller sample so that the example loads faster

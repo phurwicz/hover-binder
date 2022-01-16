@@ -1,3 +1,7 @@
+"""
+Example workspace for run-time import-able rules.
+Intended for exploring data and candidate rules simultaneously.
+"""
 from hover.utils.snorkel_helper import labeling_function
 from hover import module_config
 import re
