@@ -9,7 +9,7 @@ from bokeh.io import curdoc
 from snorkel_template import LABELING_FUNCTIONS
 
 # create a hover.core.SupervisableDataset
-dataset = create_embedded_dataset("model_template").copy()
+dataset = create_embedded_dataset("model_template", reduced=False).copy()
 
 
 # create and render bokeh document
