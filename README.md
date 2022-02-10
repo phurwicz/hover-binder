@@ -27,5 +27,5 @@ This repository demonstrates the usage of [hover](https://github.com/phurwicz/ho
 ## Snorkel Crosscheck [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/phurwicz/hover-binder/master?urlpath=/proxy/5006/app-snorkel-annotator)
 
 -   compared with the `Linked Annotator`, replaces the left plot with Snorkel labeling function outputs
--   in a real use case, you can check the labeling functions and your annotations against each other.
+-   you can check labeling functions and your annotations against each other, or even directly apply those labeling function.
 -   :bulb: one could also exploit labeling functions as sophisticated "filters" to help find interesting data points!
