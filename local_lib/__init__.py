@@ -37,6 +37,5 @@ def create_embedded_dataset(module_name, reduced=True):
 
     vectorizer = load_vectorizer(module_name)
     dataset.compute_2d_embedding(vectorizer, "umap")
-    dataset.synchronize_df_to_dictl()
 
     return dataset

@@ -5,7 +5,7 @@ dependencies:
     - jupyter-server-proxy
     - jupyter_bokeh
     - git+https://github.com/phurwicz/hover.git
-    - spacy
-    - umap-learn
     - faker
-    - wrappy
+    - spacy
+    - snorkel>=0.9.8
+    - wrappy>=0.2.6
