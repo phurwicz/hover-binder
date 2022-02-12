@@ -1,11 +1,11 @@
 dependencies:
-  - python=3.7
+  - python=3.8
   - pip
   - pip:
     - jupyter-server-proxy
     - jupyter_bokeh
-    - hover==0.5.0
-    - spacy
-    - umap-learn
+    - hover==0.6.0
     - faker
-    - wrappy
+    - spacy
+    - snorkel>=0.9.8
+    - wrappy>=0.2.6

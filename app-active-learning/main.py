@@ -14,15 +14,8 @@ TASK_MODULE = "model_template"
 # create a hover.core.SupervisableDataset
 dataset = create_embedded_dataset(TASK_MODULE).copy()
 
-# load a vectorizer-neuralnet architecture for active learning
-vectorizer = load_vectorizer(TASK_MODULE)
-
-
-def vecnet_callback(dataset, vectorizer):
-    vecnet = VectorNet(vectorizer, LogisticRegression, "model.pt", dataset.classes)
-    return vecnet
-
+vecnet = VectorNet(vectorizer, LogisticRegression, "model.pt", dataset.classes)
 
 # create and render bokeh document
 doc = curdoc()
-active_learning(dataset, vectorizer, vecnet_callback, width=800)(doc)
+active_learning(dataset, vecnet, width=800)(doc)
