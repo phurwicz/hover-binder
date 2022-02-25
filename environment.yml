@@ -4,7 +4,7 @@ dependencies:
   - pip:
     - jupyter-server-proxy
     - jupyter_bokeh
-    - hover==0.6.0
+    - hover==0.7.0
     - faker
     - spacy
     - snorkel>=0.9.8
