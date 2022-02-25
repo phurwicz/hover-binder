@@ -9,3 +9,6 @@ dependencies:
     - spacy
     - snorkel>=0.9.8
     - wrappy>=0.2.6
+    - efficientnet_pytorch
+    - torchvision
+    - librosa
