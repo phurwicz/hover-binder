@@ -11,4 +11,5 @@ dependencies:
     - wrappy>=0.2.6
     - efficientnet_pytorch
     - torchvision
+    - torchaudio
     - librosa
